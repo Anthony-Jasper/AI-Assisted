@@ -1,0 +1,114 @@
+#sideProjects{
+	position: relative;
+	top: 131px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	height: fit-content;
+	row-gap: 30px;
+	column-gap: 30px;
+	align-content: flex-start;
+	justify-content: center;
+	z-index: 2;
+	.sideItem{
+		position: relative;
+		width: 445px;
+		height: 400px;
+		background-color: hsla(220, 14%, 4%, 0.8);
+		&:nth-child(-n+2) {
+				padding: 65px 15px 0px;
+		}
+		
+		&:nth-child(n+3) {
+				padding: 0;
+		}
+		h2{
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+		p{
+			color: $darkerFade;
+			font-size: 12px;
+			padding-bottom: 20px;
+			a{
+				color: $darkerFade;
+				font-weight: bold;
+			}
+		}
+		hr{
+			position: absolute;
+			border-color: $blueHighlight;
+			left: 0px;
+			right: 30px;
+			bottom: 30px;
+		}
+		img{
+			width: 100%;
+			object-fit: cover;
+			height: 85%;
+		}
+		.projectLarge{
+			padding-left: 15px;
+			text-shadow: $textShadow;
+			color: $purewhite;
+		}
+		.projectSmall{
+			padding-left: 15px;
+			padding-bottom: 5px;
+			text-shadow: $textShadow;
+			color: $paraWhite;
+		}
+		.sideFront {
+			height: 100%;
+			opacity: 1;
+			transition: opacity 0.5s ease-in-out;
+		}
+		.sideBack {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+		}
+		&:hover{
+			.sideBack {
+				opacity: 1;
+			}
+			.sideFront {
+				opacity: 0;
+			}
+		}
+	}
+	#steam, #reddit{
+		.sideBack{
+			padding: 65px 15px 0px;
+		}
+	}
+}
+
+@media screen and (min-width: 425px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+	#sideProjects {
+		position: absolute;
+		right: 64px;
+    width: 600px;
+		.sideItem{
+			width: 285px;
+		}
+	}
+}
+
+@media screen and (min-width: 1440px) {
+	#sideProjects{
+		right: 124px;
+	}
+}

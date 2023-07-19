@@ -1,0 +1,154 @@
+footer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	background-color: $backgroundBlack;
+	padding: 0 10%;
+  top: 191px;
+
+	#footerArchive{
+		margin-bottom: 10px;
+		a{
+			color: $purewhite;
+			font-size: 14px;
+		}
+	} 
+	#footerProjects{
+		display: flex;
+    align-items: center;
+    justify-content: space-between;
+    -moz-column-gap: 30px;
+    row-gap: 30px;
+    column-gap: 30px;
+    flex-wrap: wrap;
+
+		.footerItem{
+			position: relative;
+			width: 45%;
+			height: 200px;
+			background-color: hsl(0, 0%, 100%, 5%);
+			&:nth-child(n+3) {
+				border-top: 1px solid $blueBorder;
+			}
+			.sideFront {
+				height: 100%;
+				opacity: 1;
+				transition: opacity 0.5s ease-in-out;
+			}
+			.sideBack {
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				opacity: 0;
+				transition: opacity 0.5s ease-in-out;
+				width: 100%;
+			}
+			&:hover{
+				.sideBack {
+					opacity: 1;
+					border-top: 1px solid $blueBorder;
+				}
+				.sideFront {
+					opacity: 0;
+				}
+			}
+		}
+		img {
+			width: 100%;
+			object-fit: cover;
+			height: 100%;
+		}
+		hr {
+			position: relative;
+			border-color: $blueBorder;
+			width: 75%;
+			margin-left: 0;
+		}
+		h2 {
+			margin: 10px 0 50px;
+			padding-left: 10%;
+			position: relative;
+		}
+		h3{
+			font-size: 12px;
+			padding-left: 10%;
+			position: relative;
+			margin-bottom: 5px;
+		}
+		p{
+			padding-left: 10%;
+			padding-right: 10%;
+			position: relative;
+			color: $darkerFade;
+			font-size: 10px;
+			overflow: hidden;
+			height: 75px;
+		}
+	}
+	#disclaimer {
+		position: relative;
+    bottom: 0;
+    width: 100%;
+    color: $darkerFade;
+    font-size: 12px;
+    text-align: center;
+    padding: 30px 0;
+	}
+}
+
+@media screen and (min-width: 425px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+	footer {
+    top: 301px;
+}
+}
+
+@media screen and (min-width: 1440px) {
+	footer {
+		position: relative;
+		display: block;
+		height: 300px;
+		background-color: $backgroundBlack;
+		padding: 34px 124px 0px;
+		top: 0px;
+		#footerArchive{
+			margin-bottom: 10px;
+			a{
+				color: $purewhite;
+				font-size: 14px;
+			}
+		} 
+		#footerProjects{
+			justify-content: flex-start;
+			.footerItem{
+				width: 150px;
+				height: 200px;
+			}
+		}
+		#disclaimer {
+			position: absolute;
+			bottom: 0;
+			width: auto;
+			color: hsla(0, 0%, 100%, 0.5);
+			font-size: 12px;
+			text-align: center;
+			padding: 10px;
+			right: 0;
+		}
+	}
+}
+@media screen and (min-width: 1800px) {
+	footer #footerProjects #twitch{
+		width: 350px;
+	}
+
+}

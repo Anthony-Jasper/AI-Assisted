@@ -1,0 +1,557 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+html {
+  overflow-x: hidden;
+}
+
+span,
+a,
+a:visited,
+a:focus,
+a:target {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src: url("/font/OpenSans-Regular.ttf");
+}
+* {
+  font-family: "OpenSans";
+}
+
+h1 {
+  height: 0;
+  width: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+h2, h3, a, li {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+h2, h3 {
+  font-weight: 400;
+  color: hsla(0, 0%, 100%, 0.7);
+}
+
+h2 {
+  font-size: 14px;
+}
+
+#desktopMenu {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 10px;
+  z-index: 10;
+  top: 0;
+}
+#desktopMenu #leftMenu, #desktopMenu #rightMenu {
+  display: flex;
+  align-items: center;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+}
+#desktopMenu #rightMenu {
+  position: absolute;
+  width: 100%;
+  top: 83px;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  justify-content: center;
+}
+#desktopMenu #rightMenu.hide {
+  display: none;
+}
+#desktopMenu #leftMenu {
+  position: relative;
+  justify-content: flex-start;
+}
+#desktopMenu #leftMenu li {
+  display: none;
+}
+#desktopMenu #gamesWIP {
+  width: 100%;
+  text-align: center;
+}
+#desktopMenu img {
+  position: relative;
+  display: inline-block;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 40px;
+  height: 40px;
+  filter: brightness(2);
+}
+#desktopMenu a {
+  color: #fff;
+  font-size: 14px;
+}
+#desktopMenu li {
+  color: hsla(0, 0%, 100%, 0.5);
+}
+#desktopMenu .hamburger-icon {
+  color: #fff;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 40px;
+  transform: rotate(180deg);
+}
+
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, hsl(217, 46%, 15%), hsl(217, 46%, 0%));
+  z-index: 3;
+  overflow-y: scroll;
+  right: -100vw;
+}
+#mobileMenu menu {
+  list-style: none;
+  text-decoration: none;
+  padding: 10px 10px 30px 10px;
+  margin: 0px;
+  position: relative;
+  top: 200px;
+}
+#mobileMenu menu ul {
+  list-style: none;
+  text-decoration: none;
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+}
+#mobileMenu menu ul a {
+  color: #fff;
+  font-size: 18px;
+}
+#mobileMenu menu ul hr {
+  margin: 15px auto;
+  border-color: #58F3F7;
+  width: 30px;
+}
+#mobileMenu.openMenu {
+  right: 0vw;
+}
+
+@media screen and (min-width: 1024px) {
+  #desktopMenu {
+    padding: 20px 65px;
+  }
+  #desktopMenu #gamesWIP {
+    width: -moz-fit-content;
+    width: fit-content;
+    border-right: 1px solid #fff;
+    padding-right: 20px;
+    margin-right: -10px;
+  }
+  #desktopMenu #leftMenu li {
+    display: block;
+  }
+  #desktopMenu #rightMenu {
+    position: relative;
+    width: -moz-fit-content;
+    width: fit-content;
+    top: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  #desktopMenu .mobileIcons {
+    display: none;
+  }
+  #desktopMenu .hamburger-icon {
+    display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #desktopMenu {
+    padding: 20px 125px;
+  }
+}
+html.menuoverflow {
+  overflow-y: hidden;
+}
+
+body {
+  background: linear-gradient(to bottom, hsl(217, 46%, 15%), hsl(217, 46%, 0%));
+}
+
+header {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: 90px;
+}
+header #headerContent {
+  position: relative;
+  margin: 145px 10px 35px;
+}
+header #headerContent img {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-bottom: 1px solid hsla(182, 91%, 66%, 0.4);
+}
+header #headerContent #projectDesc {
+  position: absolute;
+  width: 100%;
+  color: #fff;
+  font-size: 14px;
+  top: 0;
+  padding: 45px 10px;
+  text-align: left;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+header #headerContent #projectTime {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  color: white;
+  font-size: 14px;
+  top: 35%;
+  left: 0;
+  padding-left: 10px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 60px;
+}
+
+#projectOverview {
+  border-top: 1px solid hsla(182, 91%, 66%, 0.4);
+  position: relative;
+  margin: 35px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  row-gap: 20px;
+  padding: 30px 10px;
+  justify-content: space-between;
+}
+#projectOverview #overviewDesc {
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+}
+#projectOverview p {
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 12px;
+}
+#projectOverview h3 {
+  font-size: 12px;
+  width: 175px;
+}
+#projectOverview #overviewData {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  -moz-column-gap: 25px;
+       column-gap: 25px;
+}
+#projectOverview #overviewData > div {
+  text-align: -webkit-center;
+}
+#projectOverview #overviewData .overviewCircleContent {
+  border: 2px solid hsla(182, 91%, 66%, 0.4);
+  border-radius: 15px;
+  margin-top: 15px;
+  padding: 5px 10px;
+}
+#projectOverview #overviewData .overviewCircle {
+  border: 2px solid #58F3F7;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+#projectOverview #overviewData .overviewCircle p {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 26px;
+}
+
+.projectSection {
+  position: relative;
+  padding: 30px 0px;
+  margin: 35px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  align-items: flex-start;
+}
+.projectSection .sectionLeft {
+  display: inline-block;
+  border-top: 1px solid hsla(182, 91%, 66%, 0.4);
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 12px;
+  width: 100%;
+  position: relative;
+}
+.projectSection h2 {
+  width: 100%;
+  padding-bottom: 30px;
+}
+.projectSection p {
+  padding: 30px 20px;
+  width: 75%;
+  font-size: 14px;
+}
+.projectSection img {
+  position: relative;
+  width: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+  -o-object-position: top;
+     object-position: top;
+  max-height: 450px;
+  z-index: 2;
+}
+.projectSection .sectionRight {
+  display: inline-block;
+  border-top: 1px solid hsla(182, 91%, 66%, 0.4);
+  color: hsla(0, 0%, 100%, 0.7);
+  font-size: 12px;
+  width: 100%;
+  position: relative;
+}
+.projectSection .sectionRight p {
+  padding: 20px 10px;
+}
+.projectSection .sectionRightimg {
+  left: 0px;
+  z-index: 2;
+}
+
+#googleux #projectSec6, #googleux #projectSec7, #googleux #projectSec8, #googleux #projectSec9, #googleux #projectSec10 {
+  justify-content: flex-start;
+}
+
+#googleux #projectSec7 iframe, #googleux #projectSec3 iframe {
+  width: 100%;
+}
+
+#googleux #projectSec6 iframe {
+  width: 850px;
+}
+
+#googleux #projectSec8 #sec8Content {
+  width: 100%;
+}
+
+#minecraft #sheetData iframe {
+  width: 100%;
+}
+
+.speadsheetData h2 {
+  margin-bottom: 15px;
+}
+.speadsheetData iframe {
+  position: relative;
+  height: 600px;
+  border: none;
+}
+
+.gallery {
+  display: flex;
+  grid-gap: 10px;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+.gallery .gallery-item {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+#gallerySec {
+  height: auto;
+}
+
+#back2Top {
+  position: fixed;
+  display: none;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #2A4368;
+  border: 1px solid hsla(182, 91%, 66%, 0.4);
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  color: #fff;
+  z-index: 50;
+  cursor: pointer;
+}
+#back2Top.scrolled {
+  display: flex;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery .gallery-item {
+    width: 49%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .projectSection .sectionLeft {
+    display: inline-block;
+    width: 40%;
+  }
+  .projectSection p {
+    margin: 20px 240px 20px 24px;
+  }
+  .projectSection picture {
+    width: 50%;
+    right: 0;
+  }
+  .projectSection .sectionRight {
+    display: inline-block;
+    width: 40%;
+    right: 0px;
+    position: relative;
+  }
+  .projectSection .sectionRight p {
+    margin: 20px 24px 20px 90px;
+    position: relative;
+  }
+  .projectSection .sectionRightimg {
+    left: 0px;
+  }
+  .google-dblImg img {
+    position: relative;
+  }
+  .gallery img {
+    -o-object-fit: none;
+       object-fit: none;
+  }
+  #styleguide .gallery img {
+    -o-object-fit: scale-down;
+       object-fit: scale-down;
+  }
+}
+@media screen and (min-width: 1440px) {
+  header #headerContent {
+    margin: 35px 124px;
+  }
+  header #headerContent #projectDesc {
+    width: 650px;
+    right: 0;
+    padding: 45px 35px 0px 0px;
+  }
+  header #headerContent #projectTime {
+    width: 650px;
+    padding-left: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 60px;
+  }
+  #projectOverview {
+    margin: 35px 124px;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 30px 20px;
+    justify-content: space-between;
+  }
+  #projectOverview #overviewDesc {
+    width: 35%;
+  }
+  #projectOverview #overviewData {
+    align-items: center;
+    -moz-column-gap: 25px;
+         column-gap: 25px;
+  }
+  #projectOverview #overviewData .overviewCircleContent {
+    margin-top: 25px;
+  }
+  .projectSection {
+    margin: 35px 124px;
+  }
+}/*# sourceMappingURL=projects.css.map */

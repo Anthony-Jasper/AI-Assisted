@@ -1,0 +1,147 @@
+#desktopMenu{
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+	padding: 10px;
+	z-index: 10;
+	top: 0;
+	#leftMenu, #rightMenu{
+		display: flex;
+		align-items: center;
+		column-gap: 20px;
+		list-style: none;
+		text-decoration: none;
+		padding: 0px;
+		margin:	0px;
+	}
+	#rightMenu{
+		position: absolute;
+		width: 100%;
+    top: 83px;
+    flex-wrap: wrap;
+    row-gap: 5px;
+		justify-content: center;
+		&.hide{
+			display: none;
+		}
+	}
+	#leftMenu{
+		position: relative;
+		justify-content: flex-start;
+		li{
+			display: none;
+		}
+	}
+	#gamesWIP{
+		width: 100%;
+		text-align: center;
+	}
+	img{
+		position: relative;
+		display: inline-block;
+		object-fit: fill;
+		width: 40px;
+		height: 40px;
+		filter: brightness(2);
+	}
+	a{
+		color: $purewhite;
+		font-size: 14px;
+	}
+	li{
+		color: $darkerFade;
+	}
+	.hamburger-icon{
+		color: $purewhite;
+		cursor: pointer;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+		transform: rotate(180deg);
+	}
+}
+#mobileMenu{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to bottom, hsl(217, 46%, 15%), hsl(217, 46%, 0%));
+	z-index: 3;
+	overflow-y: scroll;
+	right: -100vw;
+	menu{
+		list-style: none;
+		text-decoration: none;
+		padding: 10px 10px 30px 10px;
+		margin: 0px;
+		position: relative;
+		top: 200px;
+		ul{
+			list-style: none;
+			text-decoration: none;
+			padding: 0px;
+			margin: 0px;
+			text-align: center;
+			a{
+				color: #fff;
+    		font-size: 18px;
+			}
+			hr{
+				margin: 15px auto;
+				border-color: $blueHighlight;
+				width: 30px;
+			}
+		}
+	}
+	&.openMenu{
+		right: 0vw;
+	}
+}
+
+@media screen and (min-width: 425px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+	#desktopMenu{
+		padding: 20px 65px;
+		#gamesWIP{
+			width: fit-content;
+			border-right: 1px solid $purewhite;
+			padding-right: 20px;
+			margin-right: -10px;
+		}
+		#leftMenu{
+			li{
+				display: block;
+			}
+		}
+		#rightMenu{
+			position: relative;
+			width: fit-content;
+			top: 0;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+		}
+		.mobileIcons{
+			display: none;
+		}
+	}
+	#desktopMenu .hamburger-icon{
+		display: none;
+	}
+	
+}
+
+@media screen and (min-width: 1440px) {
+	#desktopMenu{
+		padding: 20px 125px;
+	}
+}

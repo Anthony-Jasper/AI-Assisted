@@ -1,0 +1,134 @@
+body{
+	background: linear-gradient(to bottom, hsl(217, 46%, 15%), hsl(217, 46%, 0%));
+}
+#archiveHeader{
+	background-image: none;
+	height: auto;
+}
+#archiveProjects{
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: row;
+	align-items: center;
+	margin: 171px 10px;
+	flex-wrap: wrap;
+	gap: 20px 30px;
+	.sideItem{
+		position: relative;
+		flex: 1 1 100%;
+		height: 160px;
+		border: 2px solid $darkerFade;
+		h2{
+			font-size: 16px;
+			margin-bottom: 10px;
+		}
+		p{
+			color: $darkerFade;
+			font-size: 12px;
+			a{
+				color: $darkerFade;
+				font-weight: bold;
+			}
+		}
+		hr{
+			display: none;
+			position: absolute;
+			border-color: $blueHighlight;
+			left: 0px;
+			right: 30px;
+			bottom: 30px;
+		}
+		img{
+			width: 210px;
+			object-fit: inherit;
+			height: 156px;
+		}
+		.projectLarge{
+			position: absolute;
+			top: 30px;
+			left: 230px;
+			padding-left: 15px;
+			text-shadow: $textShadow;
+			color: $purewhite;
+		}
+		.projectSmall{
+			position: absolute;
+			top: 10px;
+			left: 215px;
+			padding-left: 15px;
+			padding-bottom: 5px;
+			text-shadow: $textShadow;
+			color: $paraWhite;
+		}
+		.sideFront {
+			height: 100%;
+			opacity: 1;
+			transition: opacity 0.5s ease-in-out;
+		}
+		.sideBack {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			opacity: 0;
+			transition: opacity 0.5s ease-in-out;
+			padding: 5px 5px 0px;
+		}
+		&:hover{
+			.sideBack {
+				opacity: 1;
+			}
+			.sideFront {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	#archiveProjects .sideItem {
+    flex: 1 1 40%;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#archiveProjects {
+    margin: 131px 65px;
+		.sideItem {
+			flex: 1 1 25%;
+			max-width: 285px;
+			height: 400px;
+			border: none;
+			.sideBack{
+				padding: 65px 15px 0px;
+			}
+			hr{
+				display: block;
+			}
+			p{
+				padding-bottom: 20px;
+			}
+			img{
+				width: 100%;
+				height: 85%;
+				object-fit: cover;
+			}
+			.projectSmall, .projectLarge{
+				position: relative;
+				top: auto;
+				left: auto;
+			}
+		}
+	}	
+}
+
+@media screen and (min-width: 1440px) {
+	#archiveProjects{
+		margin: 131px 125px;
+	.sideItem {
+			flex: 1 1 285px;
+			max-width: 357px;
+		}
+	} 
+}
